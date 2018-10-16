@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js">
+
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS &amp; SVG Clipping Demo #3</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            background: #fff;
+        }
+        
+        .container {
+            height: 100%;
+            position: relative;
+        }
+        
+        .svg-clipped {
+            width: 640px;
+            height: 640px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -220px 0 0 -320px;
+            -webkit-clip-path: url(#svgPath);
+            clip-path: url(#svgPath);
+        }
+        
+        .svg-clipped:hover {
+            -webkit-clip-path: url(#svgHover);
+            clip-path: url(#svgHover);
+            width: 640px;
+        }
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
+    </style>
 </head>
+
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
+    <div class="container">
+        <img class="svg-clipped" src="anim.gif" alt="Animation">
+        <svg>
+            <defs>
+                <clipPath id="svgPath">
+                    <path d="M149,544H70V103h79ZM543,103H192V544H543Z" transform="translate(-70 -103)" style="fill: #1d1d1b"/>
+                </clipPath>
+               
+                </clipPath>
+            </defs>
+        </svg>
     </div>
-  </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+
 </html>
